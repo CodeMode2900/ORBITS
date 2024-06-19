@@ -3,6 +3,11 @@ import math
 import pygame
 import random
 
+
+'''NOTE: THE SCALING OF DATA SUCH AS RADIUS, ORBITAL RADIUS etc. ARE MIGHT NOT BE ACCURATE AND ARE JUST FOR REPRESENTATION
+YOU CAN USE REAL DATA FOR MOON RADIUS AND PLANET'S ORBIT AND USE SOME SCALING FACTOR TO MAKE IT FIT THE SCREEN. up to you :) 
+'''
+
 pygame.init()
 
 WIDTH = 1500
@@ -93,7 +98,7 @@ moon2 = Moon(15,2,planet2,"white",1500)
 planet3 = Planet(600,180,8,"red",5.97e24)
 moon3 = Moon(15,3,planet3,"yellow",1500)
 
-planet4 = Planet(900,300,8,"pink",5.97e24)
+planet4 = Planet(800,300,8,"pink",5.97e24)
 moon4 = Moon(15,3,planet4,"orange",1500)
 
 pos_x = [random.randint(0,WIDTH) for i in range(5000)]
@@ -109,7 +114,7 @@ while running:
     window.fill("black")
     
     for _ in range(len(pos_x)):
-        pygame.draw.circle(window,(random.randint(50,255),random.randint(100,255),random.randint(200,255)),(pos_x[_],pos_y[_]),random.randint(1,2))
+        pygame.draw.circle(window,(255,255,255),(pos_x[_],pos_y[_]),random.randint(1,2))
     pygame.draw.circle(window, SUN_COLOR, (WIDTH // 2 - 100, HEIGHT // 2), SUN_RAD)
     planet1.draw_planet(window)
     moon1.draw_moon(window)
